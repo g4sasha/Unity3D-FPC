@@ -25,6 +25,6 @@ public class PlayerInvoker
 
 	public void Attack()
 	{
-		_playerCombat.Attack(_player);
+		_playerCombat.Attack(_player.Bullet, _player.transform.position, _player.transform.rotation);
 	}
 }

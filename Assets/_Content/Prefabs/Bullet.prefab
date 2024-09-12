@@ -148,3 +148,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 10
   _lifetime: 5
+  _playerLayer:
+    serializedVersion: 2
+    m_Bits: 64

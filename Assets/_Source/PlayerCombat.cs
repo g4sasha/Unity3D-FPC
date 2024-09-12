@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class PlayerCombat
 {
-	public void Attack(Player player)
+	public void Attack(GameObject prefab, Vector3 startPosition, Quaternion direction)
 	{
-		GameObject.Instantiate(player.Bullet, player.transform.position, player.transform.rotation);
+		GameObject.Instantiate(prefab, startPosition, direction);
 	}
 }
