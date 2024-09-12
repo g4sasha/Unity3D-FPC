@@ -11,6 +11,6 @@ public class Bootstrapper : MonoBehaviour
 	{
 		_playerMovement = new PlayerMovement();
 		_playerInvoker = new PlayerInvoker(_player, _playerMovement);
-		_inputListener.SetPlayerInvoker(_playerInvoker);
+		_inputListener.Construct(_playerInvoker);
 	}
 }

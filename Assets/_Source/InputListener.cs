@@ -5,7 +5,7 @@ public class InputListener : MonoBehaviour
 	[SerializeField] private InputManager _inputManager;
 	private PlayerInvoker _playerInvoker;
 
-	public void SetPlayerInvoker(PlayerInvoker playerInvoker)
+	public void Construct(PlayerInvoker playerInvoker)
     {
         _playerInvoker = playerInvoker;
     }

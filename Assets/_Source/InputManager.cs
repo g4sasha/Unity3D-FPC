@@ -31,15 +31,5 @@ public class InputManager : MonoBehaviour
         UpdateStatusText();
     }
 
-    private void UpdateStatusText()
-    {
-        if (IsInputEnabled)
-        {
-            statusText.text = "";
-        }
-        else
-        {
-            statusText.text = "Ввод отключен";
-        }
-    }
+    private void UpdateStatusText() => statusText.text = IsInputEnabled ? string.Empty : "Input disabled";
 }
