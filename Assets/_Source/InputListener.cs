@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class InputListener : MonoBehaviour
 {
+	[SerializeField] private float _mouseSensitivity;
 	[SerializeField] private InputSwitcher _inputManager;
 	[SerializeField] private Player _player;
+	[SerializeField] private CameraRotate _cameraRotate;
 	private PlayerInvoker _playerInvoker;
+	private float _horizontalMousePosition;
 
 	public void Construct(PlayerInvoker playerInvoker)
     {
@@ -21,6 +24,7 @@ public class InputListener : MonoBehaviour
 		ReadMovement();
 		ReadJump();
 		ReadShot();
+		ReadMousePosition();
 	}
 
     private void ReadShot()
@@ -49,4 +53,11 @@ public class InputListener : MonoBehaviour
 			_playerInvoker.Jump();
 		}
     }
+
+	private void ReadMousePosition()
+	{
+		_horizontalMousePosition += Input.GetAxis("Mouse X") * _mouseSensitivity * Time.deltaTime;
+		_cameraRotate.Rotate(_horizontalMousePosition);
+		_playerInvoker.Rotate();
+	}
 }
