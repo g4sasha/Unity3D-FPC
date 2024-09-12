@@ -18,6 +18,11 @@ public class PlayerInvoker
 
 	public void Jump()
 	{
+		if (!_player.Gc.IsGrounded)
+		{
+			return;
+		}
+		
 		_playerMovement.Jump(_player.JumpForce, _player.Rb);
 	}
 }
