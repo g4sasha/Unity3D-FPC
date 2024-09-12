@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class InputListener : MonoBehaviour
 {
+	[SerializeField] private InputManager _inputManager;
 	private PlayerInvoker _playerInvoker;
 
 	public void SetPlayerInvoker(PlayerInvoker playerInvoker)
@@ -11,6 +12,11 @@ public class InputListener : MonoBehaviour
 
 	private void Update()
 	{
+		if (!_inputManager.IsInputEnabled)
+		{
+			return;
+		}
+		
 		ReadMovement();
 		ReadJump();
 	}
