@@ -3,6 +3,7 @@ using UnityEngine;
 public class InputListener : MonoBehaviour
 {
 	[SerializeField] private InputSwitcher _inputManager;
+	[SerializeField] private Player _player;
 	private PlayerInvoker _playerInvoker;
 
 	public void Construct(PlayerInvoker playerInvoker)
@@ -43,7 +44,7 @@ public class InputListener : MonoBehaviour
 
     private void ReadJump()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && _player.Gc.IsGrounded)
 		{
 			_playerInvoker.Jump();
 		}
