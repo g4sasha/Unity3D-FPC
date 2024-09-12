@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class InputManager : MonoBehaviour
+public class InputSwitcher : MonoBehaviour
 {
     public bool IsInputEnabled { get; private set; } = true;
     [SerializeField] private Text statusText;

@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class InputListener : MonoBehaviour
 {
-	[SerializeField] private InputManager _inputManager;
+	[SerializeField] private InputSwitcher _inputManager;
 	private PlayerInvoker _playerInvoker;
 
 	public void Construct(PlayerInvoker playerInvoker)
@@ -19,9 +19,18 @@ public class InputListener : MonoBehaviour
 		
 		ReadMovement();
 		ReadJump();
+		ReadShot();
 	}
 
-	private void ReadMovement()
+    private void ReadShot()
+    {
+        if (Input.GetMouseButtonDown(0))
+		{
+			_playerInvoker.Attack();
+		}
+    }
+
+    private void ReadMovement()
 	{
 		var moveX = Input.GetAxis("Horizontal");
 		var moveZ = Input.GetAxis("Vertical");

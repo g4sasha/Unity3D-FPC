@@ -4,11 +4,13 @@ public class PlayerInvoker
 {
 	private Player _player;
 	private PlayerMovement _playerMovement;
+	private PlayerCombat _playerCombat;
 
-	public PlayerInvoker(Player player, PlayerMovement playerMovement)
+	public PlayerInvoker(Player player, PlayerMovement playerMovement, PlayerCombat playerCombat)
 	{
 		_player = player;
 		_playerMovement = playerMovement;
+		_playerCombat = playerCombat;
 	}
 
 	public void Move(float x, float z)
@@ -24,5 +26,10 @@ public class PlayerInvoker
 		}
 		
 		_playerMovement.Jump(_player.JumpForce, _player.Rb);
+	}
+
+	public void Attack()
+	{
+		_playerCombat.Attack(_player);
 	}
 }

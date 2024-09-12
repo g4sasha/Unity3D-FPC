@@ -604,6 +604,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <MovementSpeed>k__BackingField: 7
   <JumpForce>k__BackingField: 5
+  <Bullet>k__BackingField: {fileID: 7229947945078272464, guid: 55c6ea48ca1556943a47ee03df6c5048, type: 3}
   <Rb>k__BackingField: {fileID: 906860100}
   <Gc>k__BackingField: {fileID: 1454281196}
 --- !u!54 &906860100
@@ -736,7 +737,7 @@ GameObject:
   - component: {fileID: 1248689412}
   - component: {fileID: 1248689411}
   m_Layer: 0
-  m_Name: InputManager
+  m_Name: InputSwitcher
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
